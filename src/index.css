@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Outfit", sans-serif;
+  
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-text-dark: var(--brand-text-dark);
+  --color-brand-text-light: var(--brand-text-light);
+}
+
+:root {
+  --brand-dark: #0A0A0A; 
+  --brand-light: #121212; 
+  --brand-accent: #D4AF37; 
+  
+  --brand-text-dark: #FFFFFF; 
+  --brand-text-light: #F5F5F7; 
+  
+  --nav-height: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--brand-dark); /* Start dark for hero */
+  color: var(--brand-text-light);
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle grain overlay for premium feel */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Cursor glow */
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle closest-side, rgba(207, 174, 112, 0.08), transparent);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  /* Will be positioned via JS */
+}
+
+/* Scroll Storytelling Sticky Image Container */
+.sticky-container {
+  height: 300vh; /* Determines how long the scroll lasts */
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-accent);
+}
+
+/* Smooth zoom on hover for images */
+.hover-zoom-img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.group:hover .hover-zoom-img {
+  transform: scale(1.08);
+}
