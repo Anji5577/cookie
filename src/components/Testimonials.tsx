@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FadeIn } from "./ui/FadeIn";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SmoothCounter } from "./ui/SmoothCounter";
 
 const reviews = [

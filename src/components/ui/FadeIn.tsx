@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 
 interface FadeInProps {

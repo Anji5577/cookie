@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FadeIn } from "./ui/FadeIn";
 import { StaggerText } from "./ui/StaggerText";

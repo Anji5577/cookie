@@ -1,15 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Outfit", sans-serif;
-  
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-light: var(--brand-light);
-  --color-brand-accent: var(--brand-accent);
-  --color-brand-text-dark: var(--brand-text-dark);
-  --color-brand-text-light: var(--brand-text-light);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --brand-dark: #0A0A0A; 

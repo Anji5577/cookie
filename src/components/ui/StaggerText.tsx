@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React from "react";
 
 interface StaggerTextProps {
@@ -18,13 +18,13 @@ export function StaggerText({ text, className = "", delay = 0 }: StaggerTextProp
     }),
   };
 
-  const child = {
+  const child: import("framer-motion").Variants = {
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
       },
@@ -34,7 +34,7 @@ export function StaggerText({ text, className = "", delay = 0 }: StaggerTextProp
       y: 40,
       scale: 0.96,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
       },
